@@ -29,16 +29,13 @@ export function cleanRut(rut: string): string {
 /**
  * Calcula el dígito verificador de un RUT
  */
-function calculateDV(rut: string): string {
-  const cleanedRut = cleanRut(rut);
-  const body = cleanedRut.slice(0, -1);
-  
+function calculateDV(rutBody: string): string {
   let sum = 0;
   let multiplier = 2;
   
-  // Calcular suma con multiplicadores
-  for (let i = body.length - 1; i >= 0; i--) {
-    sum += parseInt(body[i]) * multiplier;
+  // Calcular suma con multiplicadores (de derecha a izquierda)
+  for (let i = rutBody.length - 1; i >= 0; i--) {
+    sum += parseInt(rutBody[i]) * multiplier;
     multiplier = multiplier === 7 ? 2 : multiplier + 1;
   }
   
@@ -75,7 +72,7 @@ export function validateRut(rut: string): boolean {
   if (!/^[0-9]+$/.test(body)) return false;
   
   // Calcular y comparar DV
-  const calculatedDV = calculateDV(body + '0'); // Agregamos un 0 temporal
+  const calculatedDV = calculateDV(body);
   
   return dv === calculatedDV;
 }

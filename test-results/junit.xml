@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="64" failures="0" errors="0" time="0.013545534">
+    <testsuite name="src/utils/rutValidator.test.ts" timestamp="2025-12-10T03:03:26.826Z" hostname="MacBook-Pro-de-Alex.local" tests="64" failures="0" errors="0" skipped="0" time="0.013545534">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - formatRut &gt; debe formatear un RUT sin formato a formato con puntos y guión" time="0.001595195">
+        </testcase>
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - formatRut &gt; debe formatear un RUT de 9 dígitos con K" time="0.000186429">
+        </testcase>
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - formatRut &gt; debe formatear un RUT de 8 dígitos" time="0.000128518">
+        </testcase>
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - formatRut &gt; debe mantener el formato si ya tiene puntos y guión" time="0.000126542">
+        </testcase>
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - formatRut &gt; debe manejar RUT con K mayúscula" time="0.000119008">
+        </testcase>
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - formatRut &gt; debe manejar RUT con solo 1 dígito" time="0.000113306">
+        </testcase>
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - formatRut &gt; debe manejar RUT vacío" time="0.000112608">
+        </testcase>
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - cleanRut &gt; debe eliminar puntos y guiones" time="0.000165699">
+        </testcase>
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - cleanRut &gt; debe eliminar solo guiones" time="0.000122329">
+        </testcase>
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - cleanRut &gt; debe eliminar múltiples puntos" time="0.000117515">
+        </testcase>
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - cleanRut &gt; debe retornar el mismo string si no tiene puntos ni guiones" time="0.000114149">
+        </testcase>
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - cleanRut &gt; debe manejar string vacío" time="0.000138021">
+        </testcase>
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; RUTs válidos &gt; debe validar RUT válido con formato completo" time="0.000272192">
+        </testcase>
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; RUTs válidos &gt; debe validar RUT válido sin puntos" time="0.000177659">
+        </testcase>
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; RUTs válidos &gt; debe validar RUT válido sin formato" time="0.000129788">
+        </testcase>
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; RUTs válidos &gt; debe validar RUT con K como dígito verificador" time="0.000121524">
+        </testcase>
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; RUTs válidos &gt; debe validar RUT con k minúscula" time="0.000121698">
+        </testcase>
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; RUTs válidos &gt; debe validar RUT con 0 como dígito verificador" time="0.000119404">
+        </testcase>
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; RUTs válidos &gt; debe validar RUTs de 7 dígitos" time="0.000118099">
+        </testcase>
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; RUTs válidos &gt; debe ignorar espacios al inicio y final" time="0.000130056">
+        </testcase>
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; RUTs inválidos &gt; debe rechazar RUT con dígito verificador incorrecto" time="0.000169101">
+        </testcase>
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; RUTs inválidos &gt; debe rechazar RUT con K incorrecta" time="0.000120842">
+        </testcase>
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; RUTs inválidos &gt; debe rechazar RUT vacío" time="0.000113071">
+        </testcase>
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; RUTs inválidos &gt; debe rechazar null" time="0.000112326">
+        </testcase>
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; RUTs inválidos &gt; debe rechazar undefined" time="0.000110973">
+        </testcase>
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; RUTs inválidos &gt; debe rechazar RUT muy corto" time="0.000122641">
+        </testcase>
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; RUTs inválidos &gt; debe rechazar RUT muy largo" time="0.000123896">
+        </testcase>
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; RUTs inválidos &gt; debe rechazar RUT con letras en el cuerpo" time="0.000161029">
+        </testcase>
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; RUTs inválidos &gt; debe rechazar RUT con caracteres especiales" time="0.000115038">
+        </testcase>
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; RUTs inválidos &gt; debe rechazar RUT con solo letras" time="0.000112754">
+        </testcase>
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; RUTs inválidos &gt; debe rechazar número que no es string" time="0.000114232">
+        </testcase>
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; RUTs inválidos &gt; debe rechazar objeto" time="0.000114854">
+        </testcase>
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; Casos edge &gt; debe rechazar RUT con múltiples guiones" time="0.00011988">
+        </testcase>
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; Casos edge &gt; debe manejar espacios en medio del RUT" time="0.000117355">
+        </testcase>
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRutFormat &gt; Formatos válidos &gt; debe aceptar formato con puntos y guión" time="0.000221157">
+        </testcase>
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRutFormat &gt; Formatos válidos &gt; debe aceptar formato sin puntos" time="0.000164726">
+        </testcase>
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRutFormat &gt; Formatos válidos &gt; debe aceptar solo números" time="0.000156717">
+        </testcase>
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRutFormat &gt; Formatos válidos &gt; debe aceptar RUT de 7 dígitos con puntos" time="0.000196936">
+        </testcase>
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRutFormat &gt; Formatos válidos &gt; debe aceptar K mayúscula" time="0.000119045">
+        </testcase>
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRutFormat &gt; Formatos válidos &gt; debe aceptar k minúscula" time="0.000115125">
+        </testcase>
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRutFormat &gt; Formatos válidos &gt; debe ignorar espacios" time="0.000113457">
+        </testcase>
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRutFormat &gt; Formatos inválidos &gt; debe rechazar formato incorrecto de puntos" time="0.000136269">
+        </testcase>
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRutFormat &gt; Formatos inválidos &gt; debe rechazar sin guión antes del DV" time="0.000237413">
+        </testcase>
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRutFormat &gt; Formatos inválidos &gt; debe rechazar string vacío" time="0.000276187">
+        </testcase>
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRutFormat &gt; Formatos inválidos &gt; debe rechazar null" time="0.000129345">
+        </testcase>
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRutFormat &gt; Formatos inválidos &gt; debe rechazar undefined" time="0.000119201">
+        </testcase>
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRutFormat &gt; Formatos inválidos &gt; debe rechazar letras en el cuerpo" time="0.000116079">
+        </testcase>
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - getRutErrorMessage &gt; debe retornar mensaje para RUT vacío" time="0.000166408">
+        </testcase>
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - getRutErrorMessage &gt; debe retornar mensaje para RUT con solo espacios" time="0.000118819">
+        </testcase>
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - getRutErrorMessage &gt; debe retornar mensaje para formato inválido" time="0.000161433">
+        </testcase>
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - getRutErrorMessage &gt; debe retornar mensaje para dígito verificador incorrecto" time="0.000338692">
+        </testcase>
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - getRutErrorMessage &gt; debe retornar mensaje genérico para null" time="0.000146772">
+        </testcase>
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - getRutErrorMessage &gt; debe retornar mensaje genérico para undefined" time="0.000121952">
+        </testcase>
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - Integración &gt; debe formatear y validar un RUT completo" time="0.000168365">
+        </testcase>
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - Integración &gt; debe limpiar, formatear y validar un RUT" time="0.00018292">
+        </testcase>
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - Integración &gt; flujo completo: entrada del usuario → validación → formateo" time="0.000159959">
+        </testcase>
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - Integración &gt; debe mostrar mensaje de error apropiado para cada caso" time="0.000289354">
+        </testcase>
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - RUTs chilenos reales &gt; debe validar RUT real: 11.111.111-1" time="0.000121095">
+        </testcase>
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - RUTs chilenos reales &gt; debe validar RUT real: 22.222.222-2" time="0.000085803">
+        </testcase>
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - RUTs chilenos reales &gt; debe validar RUT real: 7.777.777-6" time="0.000080538">
+        </testcase>
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - RUTs chilenos reales &gt; debe validar RUT real: 8.888.888-K" time="0.000078936">
+        </testcase>
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - RUTs chilenos reales &gt; debe validar RUT real: 16.520.380-1" time="0.000078799">
+        </testcase>
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - RUTs chilenos reales &gt; debe validar RUT real: 18.156.289-7" time="0.000079882">
+        </testcase>
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - RUTs chilenos reales &gt; debe invalidar RUTs con DV incorrecto" time="0.000144224">
+        </testcase>
+    </testsuite>
+</testsuites>

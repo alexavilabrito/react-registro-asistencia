@@ -1,5 +1,9 @@
 # Plataforma de Autenticación
 
+[![Build Status](https://img.shields.io/jenkins/build?jobUrl=http://your-jenkins-url/job/react-registro-asistencia)](http://your-jenkins-url/job/react-registro-asistencia)
+[![Test Coverage](https://img.shields.io/badge/coverage-70%25-yellow)](http://your-jenkins-url/job/react-registro-asistencia/lastSuccessfulBuild/coverage)
+[![Quality Gate](https://img.shields.io/badge/quality%20gate-passing-brightgreen)](http://your-sonarqube-url)
+
 Una aplicación moderna de autenticación construida con React, TypeScript y Tailwind CSS.
 
 ## Características
