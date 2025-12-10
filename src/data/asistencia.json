@@ -1,0 +1,207 @@
+[
+  {
+    "id": "1",
+    "alumnoId": "1",
+    "fecha": "2024-04-15",
+    "presente": true,
+    "justificado": false,
+    "clases": {
+      "clase1": true,
+      "clase2": true,
+      "clase3": false,
+      "claseKata": false,
+      "claseShiai": false
+    },
+    "observaciones": "Asistencia normal"
+  },
+  {
+    "id": "2",
+    "alumnoId": "2",
+    "fecha": "2024-04-15",
+    "presente": true,
+    "justificado": false,
+    "clases": {
+      "clase1": true,
+      "clase2": false,
+      "clase3": true,
+      "claseKata": true,
+      "claseShiai": false
+    },
+    "observaciones": "Asistencia normal"
+  },
+  {
+    "id": "3",
+    "alumnoId": "3",
+    "fecha": "2024-04-15",
+    "presente": false,
+    "justificado": true,
+    "clases": {
+      "clase1": false,
+      "clase2": false,
+      "clase3": false,
+      "claseKata": false,
+      "claseShiai": false
+    },
+    "observaciones": "Ausente por enfermedad"
+  },
+  {
+    "id": "4",
+    "alumnoId": "4",
+    "fecha": "2024-04-15",
+    "presente": true,
+    "justificado": false,
+    "clases": {
+      "clase1": true,
+      "clase2": true,
+      "clase3": true,
+      "claseKata": false,
+      "claseShiai": true
+    },
+    "observaciones": "Asistencia normal"
+  },
+  {
+    "id": "5",
+    "alumnoId": "5",
+    "fecha": "2024-04-15",
+    "presente": true,
+    "justificado": false,
+    "clases": {
+      "clase1": false,
+      "clase2": true,
+      "clase3": false,
+      "claseKata": true,
+      "claseShiai": false
+    },
+    "observaciones": "Asistencia normal"
+  },
+  {
+    "id": "6",
+    "alumnoId": "6",
+    "fecha": "2024-04-15",
+    "presente": false,
+    "justificado": false,
+    "clases": {
+      "clase1": false,
+      "clase2": false,
+      "clase3": false,
+      "claseKata": false,
+      "claseShiai": false
+    },
+    "observaciones": "Ausente sin justificación"
+  },
+  {
+    "id": "7",
+    "alumnoId": "1",
+    "fecha": "2024-04-16",
+    "presente": true,
+    "justificado": false,
+    "clases": {
+      "clase1": true,
+      "clase2": false,
+      "clase3": true,
+      "claseKata": false,
+      "claseShiai": false
+    },
+    "observaciones": "Asistencia normal"
+  },
+  {
+    "id": "8",
+    "alumnoId": "2",
+    "fecha": "2024-04-16",
+    "presente": true,
+    "justificado": false,
+    "clases": {
+      "clase1": true,
+      "clase2": true,
+      "clase3": false,
+      "claseKata": false,
+      "claseShiai": true
+    },
+    "observaciones": "Asistencia normal"
+  },
+  {
+    "id": "9",
+    "alumnoId": "3",
+    "fecha": "2024-04-16",
+    "presente": true,
+    "justificado": false,
+    "clases": {
+      "clase1": false,
+      "clase2": true,
+      "clase3": true,
+      "claseKata": false,
+      "claseShiai": false
+    },
+    "observaciones": "Asistencia normal"
+  },
+  {
+    "id": "10",
+    "alumnoId": "4",
+    "fecha": "2024-04-16",
+    "presente": true,
+    "justificado": false,
+    "clases": {
+      "clase1": true,
+      "clase2": false,
+      "clase3": false,
+      "claseKata": true,
+      "claseShiai": false
+    },
+    "observaciones": "Asistencia normal"
+  },
+  {
+    "id": "11",
+    "alumnoId": "5",
+    "fecha": "2024-04-16",
+    "presente": false,
+    "justificado": true,
+    "clases": {
+      "clase1": false,
+      "clase2": false,
+      "clase3": false,
+      "claseKata": false,
+      "claseShiai": false
+    },
+    "observaciones": "Ausente por viaje familiar"
+  },
+  {
+    "id": "12",
+    "alumnoId": "6",
+    "fecha": "2024-04-16",
+    "presente": true,
+    "justificado": false,
+    "clases": {
+      "clase1": false,
+      "clase2": false,
+      "clase3": true,
+      "claseKata": false,
+      "claseShiai": true
+    },
+    "observaciones": "Asistencia normal"
+  },
+  {
+    "id": "13",
+    "alumnoId": "7",
+    "fecha": "2024-04-16",
+    "presente": true,
+    "justificado": false,
+    "observaciones": "Asistencia normal"
+  },
+  {
+    "id": "14",
+    "alumnoId": "8",
+    "fecha": "2024-04-16",
+    "presente": true,
+    "justificado": false,
+    "observaciones": "Asistencia normal"
+  },
+  {
+    "id": "15",
+    "alumnoId": "11",
+    "fecha": "2024-04-16",
+    "presente": true,
+    "justificado": false,
+    "observaciones": "Asistencia normal"
+  }
+]
+
