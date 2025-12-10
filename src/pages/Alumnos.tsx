@@ -30,7 +30,7 @@ const alumnoSchema = z.object({
 
 type AlumnoFormData = z.infer<typeof alumnoSchema>;
 
-const ITEMS_PER_PAGE = 10;
+const ITEMS_PER_PAGE = 8;
 
 export default function Alumnos() {
   const navigate = useNavigate();

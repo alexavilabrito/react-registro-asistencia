@@ -91,7 +91,7 @@ function AppRoutes() {
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="mantenedores/alumnos" element={<Alumnos />} />
         <Route path="mantenedores/alumnos/:id" element={<AlumnoDetail />} />
-        <Route path="asistencia" element={<Asistencia />} />
+        <Route path="asistencia/registro" element={<Asistencia />} />
         <Route path="profile" element={<Profile />} />
       </Route>
       <Route path="*" element={<Navigate to="/login" replace />} />
