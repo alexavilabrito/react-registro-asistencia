@@ -15,7 +15,6 @@ export default function Profile() {
     register,
     handleSubmit,
     formState: { errors },
-    setValue,
   } = useForm<UserProfile>({
     defaultValues: user || {
       email: '',

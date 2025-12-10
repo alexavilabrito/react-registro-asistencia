@@ -1,7 +1,11 @@
 import { useState, useEffect } from 'react';
+import { Search, X, Plus, Check } from 'lucide-react';
 import { alumnoService } from '../services/alumnoService';
 import { asistenciaService } from '../services/asistenciaService';
 import type { Alumno } from '../types/alumno';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 
 interface ClasesAsistencia {
   clase1: boolean;
@@ -187,26 +191,24 @@ export default function Asistencia() {
             <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Buscar Alumnos</h2>
             <div className="relative">
               <div className="relative">
-                <input
+                <Search className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
+                <Input
                   type="text"
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   placeholder="Buscar por nombre, RUT..."
-                  className="w-full px-4 py-3 pl-11 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none dark:bg-gray-700 dark:text-white"
+                  className="pl-11"
                 />
-                <svg
-                  className="absolute left-3 top-3.5 h-5 w-5 text-gray-400"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                  />
-                </svg>
+                {searchTerm && (
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    onClick={() => setSearchTerm('')}
+                    className="absolute right-1 top-1 h-8 w-8"
+                  >
+                    <X className="h-4 w-4" />
+                  </Button>
+                )}
               </div>
 
               {/* Resultados de búsqueda */}
@@ -241,9 +243,7 @@ export default function Asistencia() {
                           {alumno.rut} • Cinturón {alumno.grado}
                         </div>
                       </div>
-                      <svg className="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                      </svg>
+                      <Plus className="w-5 h-5 text-primary-600" />
                     </button>
                   ))}
                 </div>
@@ -257,16 +257,14 @@ export default function Asistencia() {
               <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
                 Alumnos en Clase ({alumnosSeleccionados.length})
               </h2>
-              <button
+              <Button
                 onClick={handleGuardar}
                 disabled={saving || alumnosSeleccionados.length === 0}
-                className="bg-primary-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-primary-700 transition-colors flex items-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="flex items-center space-x-2"
               >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
+                <Check className="w-5 h-5" />
                 <span>{saving ? 'Guardando...' : 'Guardar Asistencia'}</span>
-              </button>
+              </Button>
             </div>
 
             {alumnosSeleccionados.length === 0 ? (
@@ -333,14 +331,14 @@ export default function Asistencia() {
                               </div>
                             </div>
 
-                            <button
+                            <Button
+                              variant="ghost"
+                              size="icon"
                               onClick={() => removerAlumno(alumno.id)}
                               className="text-red-600 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300"
                             >
-                              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                              </svg>
-                            </button>
+                              <X className="w-5 h-5" />
+                            </Button>
                           </div>
 
                           {/* Información Adicional */}
@@ -430,12 +428,12 @@ export default function Asistencia() {
 
                           {/* Observaciones */}
                           <div className="mt-3">
-                            <input
+                            <Input
                               type="text"
                               value={alumno.observaciones}
                               onChange={(e) => updateObservaciones(alumno.id, e.target.value)}
                               placeholder="Observaciones adicionales..."
-                              className="w-full px-3 py-2 text-sm border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none dark:bg-gray-700 dark:text-white"
+                              className="text-sm"
                             />
                           </div>
                         </div>
@@ -479,21 +477,17 @@ export default function Asistencia() {
           <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm border border-gray-200 dark:border-gray-700">
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Información</h3>
             <div className="space-y-4">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  Fecha de Clase
-                </label>
-                <input
+              <div className="space-y-2">
+                <Label htmlFor="fecha">Fecha de Clase</Label>
+                <Input
+                  id="fecha"
                   type="date"
                   value={fecha}
                   onChange={(e) => setFecha(e.target.value)}
-                  className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none dark:bg-gray-700 dark:text-white"
                 />
               </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  Alumnos Activos
-                </label>
+              <div className="space-y-2">
+                <Label>Alumnos Activos</Label>
                 <div className="px-4 py-2 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white font-semibold">
                   {todosAlumnos.length} alumnos
                 </div>

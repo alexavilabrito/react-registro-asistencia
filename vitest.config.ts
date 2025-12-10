@@ -8,10 +8,10 @@ export default defineConfig({
   test: {
     // Configuración para CI/CD
     globals: true,
-    environment: 'jsdom',
+    environment: 'happy-dom',
     setupFiles: './src/test/setup.ts',
     
-    // Resolver problemas de ES modules con jsdom
+    // Pool configuration
     pool: 'forks',
     poolOptions: {
       forks: {

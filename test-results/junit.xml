@@ -1,133 +1,237 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuites name="vitest tests" tests="64" failures="0" errors="0" time="0.013545534">
-    <testsuite name="src/utils/rutValidator.test.ts" timestamp="2025-12-10T03:03:26.826Z" hostname="MacBook-Pro-de-Alex.local" tests="64" failures="0" errors="0" skipped="0" time="0.013545534">
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - formatRut &gt; debe formatear un RUT sin formato a formato con puntos y guión" time="0.001595195">
+<testsuites name="vitest tests" tests="114" failures="0" errors="0" time="0.309189245">
+    <testsuite name="src/utils/rutValidator.test.ts" timestamp="2025-12-10T03:38:07.059Z" hostname="MacBook-Pro-de-Alex.local" tests="64" failures="0" errors="0" skipped="0" time="0.018270978">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - formatRut &gt; debe formatear un RUT sin formato a formato con puntos y guión" time="0.001674828">
         </testcase>
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - formatRut &gt; debe formatear un RUT de 9 dígitos con K" time="0.000186429">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - formatRut &gt; debe formatear un RUT de 9 dígitos con K" time="0.000216993">
         </testcase>
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - formatRut &gt; debe formatear un RUT de 8 dígitos" time="0.000128518">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - formatRut &gt; debe formatear un RUT de 8 dígitos" time="0.000157653">
         </testcase>
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - formatRut &gt; debe mantener el formato si ya tiene puntos y guión" time="0.000126542">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - formatRut &gt; debe mantener el formato si ya tiene puntos y guión" time="0.000165786">
         </testcase>
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - formatRut &gt; debe manejar RUT con K mayúscula" time="0.000119008">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - formatRut &gt; debe manejar RUT con K mayúscula" time="0.000159925">
         </testcase>
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - formatRut &gt; debe manejar RUT con solo 1 dígito" time="0.000113306">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - formatRut &gt; debe manejar RUT con solo 1 dígito" time="0.000165043">
         </testcase>
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - formatRut &gt; debe manejar RUT vacío" time="0.000112608">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - formatRut &gt; debe manejar RUT vacío" time="0.000148724">
         </testcase>
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - cleanRut &gt; debe eliminar puntos y guiones" time="0.000165699">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - cleanRut &gt; debe eliminar puntos y guiones" time="0.000234534">
         </testcase>
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - cleanRut &gt; debe eliminar solo guiones" time="0.000122329">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - cleanRut &gt; debe eliminar solo guiones" time="0.000167084">
         </testcase>
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - cleanRut &gt; debe eliminar múltiples puntos" time="0.000117515">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - cleanRut &gt; debe eliminar múltiples puntos" time="0.000156792">
         </testcase>
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - cleanRut &gt; debe retornar el mismo string si no tiene puntos ni guiones" time="0.000114149">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - cleanRut &gt; debe retornar el mismo string si no tiene puntos ni guiones" time="0.000167852">
         </testcase>
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - cleanRut &gt; debe manejar string vacío" time="0.000138021">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - cleanRut &gt; debe manejar string vacío" time="0.000148141">
         </testcase>
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; RUTs válidos &gt; debe validar RUT válido con formato completo" time="0.000272192">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; RUTs válidos &gt; debe validar RUT válido con formato completo" time="0.000413032">
         </testcase>
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; RUTs válidos &gt; debe validar RUT válido sin puntos" time="0.000177659">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; RUTs válidos &gt; debe validar RUT válido sin puntos" time="0.000235621">
         </testcase>
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; RUTs válidos &gt; debe validar RUT válido sin formato" time="0.000129788">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; RUTs válidos &gt; debe validar RUT válido sin formato" time="0.000179232">
         </testcase>
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; RUTs válidos &gt; debe validar RUT con K como dígito verificador" time="0.000121524">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; RUTs válidos &gt; debe validar RUT con K como dígito verificador" time="0.000171074">
         </testcase>
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; RUTs válidos &gt; debe validar RUT con k minúscula" time="0.000121698">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; RUTs válidos &gt; debe validar RUT con k minúscula" time="0.000169269">
         </testcase>
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; RUTs válidos &gt; debe validar RUT con 0 como dígito verificador" time="0.000119404">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; RUTs válidos &gt; debe validar RUT con 0 como dígito verificador" time="0.000164791">
         </testcase>
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; RUTs válidos &gt; debe validar RUTs de 7 dígitos" time="0.000118099">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; RUTs válidos &gt; debe validar RUTs de 7 dígitos" time="0.000169067">
         </testcase>
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; RUTs válidos &gt; debe ignorar espacios al inicio y final" time="0.000130056">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; RUTs válidos &gt; debe ignorar espacios al inicio y final" time="0.000165037">
         </testcase>
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; RUTs inválidos &gt; debe rechazar RUT con dígito verificador incorrecto" time="0.000169101">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; RUTs inválidos &gt; debe rechazar RUT con dígito verificador incorrecto" time="0.00016569">
         </testcase>
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; RUTs inválidos &gt; debe rechazar RUT con K incorrecta" time="0.000120842">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; RUTs inválidos &gt; debe rechazar RUT con K incorrecta" time="0.000164436">
         </testcase>
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; RUTs inválidos &gt; debe rechazar RUT vacío" time="0.000113071">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; RUTs inválidos &gt; debe rechazar RUT vacío" time="0.000156003">
         </testcase>
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; RUTs inválidos &gt; debe rechazar null" time="0.000112326">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; RUTs inválidos &gt; debe rechazar null" time="0.00020001">
         </testcase>
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; RUTs inválidos &gt; debe rechazar undefined" time="0.000110973">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; RUTs inválidos &gt; debe rechazar undefined" time="0.00017702">
         </testcase>
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; RUTs inválidos &gt; debe rechazar RUT muy corto" time="0.000122641">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; RUTs inválidos &gt; debe rechazar RUT muy corto" time="0.000171654">
         </testcase>
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; RUTs inválidos &gt; debe rechazar RUT muy largo" time="0.000123896">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; RUTs inválidos &gt; debe rechazar RUT muy largo" time="0.000166504">
         </testcase>
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; RUTs inválidos &gt; debe rechazar RUT con letras en el cuerpo" time="0.000161029">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; RUTs inválidos &gt; debe rechazar RUT con letras en el cuerpo" time="0.000164045">
         </testcase>
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; RUTs inválidos &gt; debe rechazar RUT con caracteres especiales" time="0.000115038">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; RUTs inválidos &gt; debe rechazar RUT con caracteres especiales" time="0.000156766">
         </testcase>
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; RUTs inválidos &gt; debe rechazar RUT con solo letras" time="0.000112754">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; RUTs inválidos &gt; debe rechazar RUT con solo letras" time="0.000166526">
         </testcase>
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; RUTs inválidos &gt; debe rechazar número que no es string" time="0.000114232">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; RUTs inválidos &gt; debe rechazar número que no es string" time="0.00023127">
         </testcase>
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; RUTs inválidos &gt; debe rechazar objeto" time="0.000114854">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; RUTs inválidos &gt; debe rechazar objeto" time="0.000216501">
         </testcase>
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; Casos edge &gt; debe rechazar RUT con múltiples guiones" time="0.00011988">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; Casos edge &gt; debe rechazar RUT con múltiples guiones" time="0.000180367">
         </testcase>
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; Casos edge &gt; debe manejar espacios en medio del RUT" time="0.000117355">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRut &gt; Casos edge &gt; debe manejar espacios en medio del RUT" time="0.000229958">
         </testcase>
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRutFormat &gt; Formatos válidos &gt; debe aceptar formato con puntos y guión" time="0.000221157">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRutFormat &gt; Formatos válidos &gt; debe aceptar formato con puntos y guión" time="0.000430087">
         </testcase>
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRutFormat &gt; Formatos válidos &gt; debe aceptar formato sin puntos" time="0.000164726">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRutFormat &gt; Formatos válidos &gt; debe aceptar formato sin puntos" time="0.000250866">
         </testcase>
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRutFormat &gt; Formatos válidos &gt; debe aceptar solo números" time="0.000156717">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRutFormat &gt; Formatos válidos &gt; debe aceptar solo números" time="0.000232864">
         </testcase>
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRutFormat &gt; Formatos válidos &gt; debe aceptar RUT de 7 dígitos con puntos" time="0.000196936">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRutFormat &gt; Formatos válidos &gt; debe aceptar RUT de 7 dígitos con puntos" time="0.000308566">
         </testcase>
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRutFormat &gt; Formatos válidos &gt; debe aceptar K mayúscula" time="0.000119045">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRutFormat &gt; Formatos válidos &gt; debe aceptar K mayúscula" time="0.000186733">
         </testcase>
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRutFormat &gt; Formatos válidos &gt; debe aceptar k minúscula" time="0.000115125">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRutFormat &gt; Formatos válidos &gt; debe aceptar k minúscula" time="0.000171754">
         </testcase>
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRutFormat &gt; Formatos válidos &gt; debe ignorar espacios" time="0.000113457">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRutFormat &gt; Formatos válidos &gt; debe ignorar espacios" time="0.000176563">
         </testcase>
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRutFormat &gt; Formatos inválidos &gt; debe rechazar formato incorrecto de puntos" time="0.000136269">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRutFormat &gt; Formatos inválidos &gt; debe rechazar formato incorrecto de puntos" time="0.000372485">
         </testcase>
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRutFormat &gt; Formatos inválidos &gt; debe rechazar sin guión antes del DV" time="0.000237413">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRutFormat &gt; Formatos inválidos &gt; debe rechazar sin guión antes del DV" time="0.00041439">
         </testcase>
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRutFormat &gt; Formatos inválidos &gt; debe rechazar string vacío" time="0.000276187">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRutFormat &gt; Formatos inválidos &gt; debe rechazar string vacío" time="0.000386494">
         </testcase>
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRutFormat &gt; Formatos inválidos &gt; debe rechazar null" time="0.000129345">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRutFormat &gt; Formatos inválidos &gt; debe rechazar null" time="0.000221396">
         </testcase>
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRutFormat &gt; Formatos inválidos &gt; debe rechazar undefined" time="0.000119201">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRutFormat &gt; Formatos inválidos &gt; debe rechazar undefined" time="0.000289676">
         </testcase>
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRutFormat &gt; Formatos inválidos &gt; debe rechazar letras en el cuerpo" time="0.000116079">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - validateRutFormat &gt; Formatos inválidos &gt; debe rechazar letras en el cuerpo" time="0.000182723">
         </testcase>
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - getRutErrorMessage &gt; debe retornar mensaje para RUT vacío" time="0.000166408">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - getRutErrorMessage &gt; debe retornar mensaje para RUT vacío" time="0.000218239">
         </testcase>
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - getRutErrorMessage &gt; debe retornar mensaje para RUT con solo espacios" time="0.000118819">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - getRutErrorMessage &gt; debe retornar mensaje para RUT con solo espacios" time="0.000163101">
         </testcase>
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - getRutErrorMessage &gt; debe retornar mensaje para formato inválido" time="0.000161433">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - getRutErrorMessage &gt; debe retornar mensaje para formato inválido" time="0.000161246">
         </testcase>
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - getRutErrorMessage &gt; debe retornar mensaje para dígito verificador incorrecto" time="0.000338692">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - getRutErrorMessage &gt; debe retornar mensaje para dígito verificador incorrecto" time="0.000167629">
         </testcase>
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - getRutErrorMessage &gt; debe retornar mensaje genérico para null" time="0.000146772">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - getRutErrorMessage &gt; debe retornar mensaje genérico para null" time="0.000151194">
         </testcase>
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - getRutErrorMessage &gt; debe retornar mensaje genérico para undefined" time="0.000121952">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - getRutErrorMessage &gt; debe retornar mensaje genérico para undefined" time="0.000153186">
         </testcase>
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - Integración &gt; debe formatear y validar un RUT completo" time="0.000168365">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - Integración &gt; debe formatear y validar un RUT completo" time="0.000257313">
         </testcase>
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - Integración &gt; debe limpiar, formatear y validar un RUT" time="0.00018292">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - Integración &gt; debe limpiar, formatear y validar un RUT" time="0.000270479">
         </testcase>
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - Integración &gt; flujo completo: entrada del usuario → validación → formateo" time="0.000159959">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - Integración &gt; flujo completo: entrada del usuario → validación → formateo" time="0.000215553">
         </testcase>
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - Integración &gt; debe mostrar mensaje de error apropiado para cada caso" time="0.000289354">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - Integración &gt; debe mostrar mensaje de error apropiado para cada caso" time="0.000375557">
         </testcase>
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - RUTs chilenos reales &gt; debe validar RUT real: 11.111.111-1" time="0.000121095">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - RUTs chilenos reales &gt; debe validar RUT real: 11.111.111-1" time="0.000160817">
         </testcase>
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - RUTs chilenos reales &gt; debe validar RUT real: 22.222.222-2" time="0.000085803">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - RUTs chilenos reales &gt; debe validar RUT real: 22.222.222-2" time="0.000121269">
         </testcase>
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - RUTs chilenos reales &gt; debe validar RUT real: 7.777.777-6" time="0.000080538">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - RUTs chilenos reales &gt; debe validar RUT real: 7.777.777-6" time="0.000114565">
         </testcase>
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - RUTs chilenos reales &gt; debe validar RUT real: 8.888.888-K" time="0.000078936">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - RUTs chilenos reales &gt; debe validar RUT real: 8.888.888-K" time="0.000111099">
         </testcase>
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - RUTs chilenos reales &gt; debe validar RUT real: 16.520.380-1" time="0.000078799">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - RUTs chilenos reales &gt; debe validar RUT real: 16.520.380-1" time="0.000111043">
         </testcase>
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - RUTs chilenos reales &gt; debe validar RUT real: 18.156.289-7" time="0.000079882">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - RUTs chilenos reales &gt; debe validar RUT real: 18.156.289-7" time="0.000109031">
         </testcase>
-        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - RUTs chilenos reales &gt; debe invalidar RUTs con DV incorrecto" time="0.000144224">
+        <testcase classname="src/utils/rutValidator.test.ts" name="RUT Validator - RUTs chilenos reales &gt; debe invalidar RUTs con DV incorrecto" time="0.000191621">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/components/ui/__tests__/button.test.tsx" timestamp="2025-12-10T03:38:07.081Z" hostname="MacBook-Pro-de-Alex.local" tests="22" failures="0" errors="0" skipped="0" time="0.126119303">
+        <testcase classname="src/components/ui/__tests__/button.test.tsx" name="Button Component &gt; Rendering &gt; should render button with children" time="0.042462137">
+        </testcase>
+        <testcase classname="src/components/ui/__tests__/button.test.tsx" name="Button Component &gt; Rendering &gt; should render button with default variant" time="0.002505342">
+        </testcase>
+        <testcase classname="src/components/ui/__tests__/button.test.tsx" name="Button Component &gt; Variants &gt; should render destructive variant" time="0.002160441">
+        </testcase>
+        <testcase classname="src/components/ui/__tests__/button.test.tsx" name="Button Component &gt; Variants &gt; should render outline variant" time="0.001894849">
+        </testcase>
+        <testcase classname="src/components/ui/__tests__/button.test.tsx" name="Button Component &gt; Variants &gt; should render ghost variant" time="0.001868008">
+        </testcase>
+        <testcase classname="src/components/ui/__tests__/button.test.tsx" name="Button Component &gt; Variants &gt; should render secondary variant" time="0.002105714">
+        </testcase>
+        <testcase classname="src/components/ui/__tests__/button.test.tsx" name="Button Component &gt; Variants &gt; should render link variant" time="0.001980279">
+        </testcase>
+        <testcase classname="src/components/ui/__tests__/button.test.tsx" name="Button Component &gt; Sizes &gt; should render default size" time="0.001846152">
+        </testcase>
+        <testcase classname="src/components/ui/__tests__/button.test.tsx" name="Button Component &gt; Sizes &gt; should render small size" time="0.001952132">
+        </testcase>
+        <testcase classname="src/components/ui/__tests__/button.test.tsx" name="Button Component &gt; Sizes &gt; should render large size" time="0.0020895">
+        </testcase>
+        <testcase classname="src/components/ui/__tests__/button.test.tsx" name="Button Component &gt; Sizes &gt; should render icon size" time="0.002303895">
+        </testcase>
+        <testcase classname="src/components/ui/__tests__/button.test.tsx" name="Button Component &gt; States &gt; should be disabled when disabled prop is true" time="0.002336719">
+        </testcase>
+        <testcase classname="src/components/ui/__tests__/button.test.tsx" name="Button Component &gt; States &gt; should not call onClick when disabled" time="0.021689889">
+        </testcase>
+        <testcase classname="src/components/ui/__tests__/button.test.tsx" name="Button Component &gt; Interactions &gt; should call onClick when clicked" time="0.012706423">
+        </testcase>
+        <testcase classname="src/components/ui/__tests__/button.test.tsx" name="Button Component &gt; Interactions &gt; should support keyboard navigation" time="0.007688208">
+        </testcase>
+        <testcase classname="src/components/ui/__tests__/button.test.tsx" name="Button Component &gt; Custom Props &gt; should accept custom className" time="0.002231526">
+        </testcase>
+        <testcase classname="src/components/ui/__tests__/button.test.tsx" name="Button Component &gt; Custom Props &gt; should accept type prop" time="0.003157356">
+        </testcase>
+        <testcase classname="src/components/ui/__tests__/button.test.tsx" name="Button Component &gt; Custom Props &gt; should forward ref" time="0.0018667">
+        </testcase>
+        <testcase classname="src/components/ui/__tests__/button.test.tsx" name="Button Component &gt; Accessibility &gt; should have proper role" time="0.00190236">
+        </testcase>
+        <testcase classname="src/components/ui/__tests__/button.test.tsx" name="Button Component &gt; Accessibility &gt; should support aria-label" time="0.001928963">
+        </testcase>
+        <testcase classname="src/components/ui/__tests__/button.test.tsx" name="Button Component &gt; Accessibility &gt; should be focusable" time="0.002249431">
+        </testcase>
+        <testcase classname="src/components/ui/__tests__/button.test.tsx" name="Button Component &gt; Accessibility &gt; should not be focusable when disabled" time="0.001844902">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/components/ui/__tests__/input.test.tsx" timestamp="2025-12-10T03:38:07.085Z" hostname="MacBook-Pro-de-Alex.local" tests="28" failures="0" errors="0" skipped="0" time="0.164798964">
+        <testcase classname="src/components/ui/__tests__/input.test.tsx" name="Input Component &gt; Rendering &gt; should render input element" time="0.040716547">
+        </testcase>
+        <testcase classname="src/components/ui/__tests__/input.test.tsx" name="Input Component &gt; Rendering &gt; should render with placeholder" time="0.001920586">
+        </testcase>
+        <testcase classname="src/components/ui/__tests__/input.test.tsx" name="Input Component &gt; Rendering &gt; should render with default type text" time="0.001523426">
+        </testcase>
+        <testcase classname="src/components/ui/__tests__/input.test.tsx" name="Input Component &gt; Types &gt; should render email input" time="0.002100888">
+        </testcase>
+        <testcase classname="src/components/ui/__tests__/input.test.tsx" name="Input Component &gt; Types &gt; should render password input" time="0.001085993">
+        </testcase>
+        <testcase classname="src/components/ui/__tests__/input.test.tsx" name="Input Component &gt; Types &gt; should render number input" time="0.00230928">
+        </testcase>
+        <testcase classname="src/components/ui/__tests__/input.test.tsx" name="Input Component &gt; Types &gt; should render date input" time="0.001151724">
+        </testcase>
+        <testcase classname="src/components/ui/__tests__/input.test.tsx" name="Input Component &gt; States &gt; should be disabled when disabled prop is true" time="0.002165276">
+        </testcase>
+        <testcase classname="src/components/ui/__tests__/input.test.tsx" name="Input Component &gt; States &gt; should be readonly when readOnly prop is true" time="0.001767256">
+        </testcase>
+        <testcase classname="src/components/ui/__tests__/input.test.tsx" name="Input Component &gt; States &gt; should accept value prop" time="0.002394542">
+        </testcase>
+        <testcase classname="src/components/ui/__tests__/input.test.tsx" name="Input Component &gt; States &gt; should accept defaultValue prop" time="0.001729668">
+        </testcase>
+        <testcase classname="src/components/ui/__tests__/input.test.tsx" name="Input Component &gt; Interactions &gt; should call onChange when typing" time="0.037442172">
+        </testcase>
+        <testcase classname="src/components/ui/__tests__/input.test.tsx" name="Input Component &gt; Interactions &gt; should update value when typing" time="0.029181978">
+        </testcase>
+        <testcase classname="src/components/ui/__tests__/input.test.tsx" name="Input Component &gt; Interactions &gt; should not call onChange when disabled" time="0.005178068">
+        </testcase>
+        <testcase classname="src/components/ui/__tests__/input.test.tsx" name="Input Component &gt; Validation &gt; should accept required attribute" time="0.00222497">
+        </testcase>
+        <testcase classname="src/components/ui/__tests__/input.test.tsx" name="Input Component &gt; Validation &gt; should accept maxLength attribute" time="0.00175662">
+        </testcase>
+        <testcase classname="src/components/ui/__tests__/input.test.tsx" name="Input Component &gt; Validation &gt; should accept pattern attribute" time="0.001716687">
+        </testcase>
+        <testcase classname="src/components/ui/__tests__/input.test.tsx" name="Input Component &gt; Custom Props &gt; should accept custom className" time="0.002307817">
+        </testcase>
+        <testcase classname="src/components/ui/__tests__/input.test.tsx" name="Input Component &gt; Custom Props &gt; should accept id prop" time="0.001951404">
+        </testcase>
+        <testcase classname="src/components/ui/__tests__/input.test.tsx" name="Input Component &gt; Custom Props &gt; should accept name prop" time="0.001698094">
+        </testcase>
+        <testcase classname="src/components/ui/__tests__/input.test.tsx" name="Input Component &gt; Custom Props &gt; should forward ref" time="0.001630363">
+        </testcase>
+        <testcase classname="src/components/ui/__tests__/input.test.tsx" name="Input Component &gt; Accessibility &gt; should be focusable" time="0.002132091">
+        </testcase>
+        <testcase classname="src/components/ui/__tests__/input.test.tsx" name="Input Component &gt; Accessibility &gt; should support aria-label" time="0.001938559">
+        </testcase>
+        <testcase classname="src/components/ui/__tests__/input.test.tsx" name="Input Component &gt; Accessibility &gt; should support aria-describedby" time="0.003569982">
+        </testcase>
+        <testcase classname="src/components/ui/__tests__/input.test.tsx" name="Input Component &gt; Accessibility &gt; should not be focusable when disabled" time="0.001833465">
+        </testcase>
+        <testcase classname="src/components/ui/__tests__/input.test.tsx" name="Input Component &gt; Styling &gt; should have base styles" time="0.004610061">
+        </testcase>
+        <testcase classname="src/components/ui/__tests__/input.test.tsx" name="Input Component &gt; Styling &gt; should have focus styles" time="0.001643524">
+        </testcase>
+        <testcase classname="src/components/ui/__tests__/input.test.tsx" name="Input Component &gt; Styling &gt; should have disabled styles" time="0.001617381">
         </testcase>
     </testsuite>
 </testsuites>

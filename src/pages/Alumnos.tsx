@@ -1,13 +1,32 @@
 import { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useForm } from 'react-hook-form';
+import { useForm, Controller } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import toast from 'react-hot-toast';
+import { Search, X } from 'lucide-react';
 import type { Alumno, Grado } from '../types/alumno';
 import { grados } from '../types/alumno';
 import { alumnoService } from '../services';
 import { validateRut, formatRut, cleanRut } from '../utils/rutValidator';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog';
 
 const alumnoSchema = z.object({
   rut: z.string()
@@ -68,6 +87,7 @@ export default function Alumnos() {
     formState: { errors },
     reset,
     watch,
+    control,
   } = useForm<AlumnoFormData>({
     resolver: zodResolver(alumnoSchema),
   });
@@ -256,41 +276,29 @@ export default function Alumnos() {
       {/* Barra de búsqueda */}
       <div className="mb-6 bg-white dark:bg-gray-800 rounded-xl p-4 shadow-sm border border-gray-200 dark:border-gray-700">
         <div className="relative">
-          <input
+          <Search className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
+          <Input
             type="text"
             value={searchTerm}
             onChange={(e) => {
               setSearchTerm(e.target.value);
-              setCurrentPage(1); // Resetear a página 1 al buscar
+              setCurrentPage(1);
             }}
             placeholder="Buscar por nombre, apellido o RUT..."
-            className="w-full px-4 py-3 pl-11 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
+            className="pl-11"
           />
-          <svg
-            className="absolute left-3 top-3.5 h-5 w-5 text-gray-400"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-            />
-          </svg>
           {searchTerm && (
-            <button
+            <Button
+              variant="ghost"
+              size="icon"
               onClick={() => {
                 setSearchTerm('');
                 setCurrentPage(1);
               }}
-              className="absolute right-3 top-3 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"
+              className="absolute right-1 top-1 h-8 w-8"
             >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
+              <X className="h-4 w-4" />
+            </Button>
           )}
         </div>
       </div>
@@ -709,126 +717,125 @@ export default function Alumnos() {
 
               {/* Primera fila: RUT, Nombres */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                    RUT *
-                  </label>
-                  <input
+                <div className="space-y-2">
+                  <Label htmlFor="rut">RUT *</Label>
+                  <Input
+                    id="rut"
                     type="text"
                     {...register('rut', {
                       onChange: (e) => {
-                        // Auto-formatear RUT mientras escribe
                         const formatted = formatRut(e.target.value);
                         e.target.value = formatted;
                       }
                     })}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all outline-none"
                     placeholder="12.345.678-9"
                     maxLength={12}
+                    className={errors.rut ? 'border-red-500' : ''}
                   />
                   {errors.rut && (
-                    <p className="mt-1 text-sm text-red-600">{errors.rut.message}</p>
+                    <p className="text-sm text-red-600">{errors.rut.message}</p>
                   )}
-                  <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
+                  <p className="text-xs text-gray-500 dark:text-gray-400">
                     Formato: 12.345.678-9 o 12345678-9
                   </p>
                 </div>
 
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                    Nombres *
-                  </label>
-                  <input
+                <div className="space-y-2">
+                  <Label htmlFor="nombres">Nombres *</Label>
+                  <Input
+                    id="nombres"
                     type="text"
                     {...register('nombres')}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all outline-none"
                     placeholder="Juan"
+                    className={errors.nombres ? 'border-red-500' : ''}
                   />
                   {errors.nombres && (
-                    <p className="mt-1 text-sm text-red-600">{errors.nombres.message}</p>
+                    <p className="text-sm text-red-600">{errors.nombres.message}</p>
                   )}
                 </div>
               </div>
 
               {/* Segunda fila: Apellidos */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                    Apellido Paterno *
-                  </label>
-                  <input
+                <div className="space-y-2">
+                  <Label htmlFor="apellidoPaterno">Apellido Paterno *</Label>
+                  <Input
+                    id="apellidoPaterno"
                     type="text"
                     {...register('apellidoPaterno')}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all outline-none"
                     placeholder="Pérez"
+                    className={errors.apellidoPaterno ? 'border-red-500' : ''}
                   />
                   {errors.apellidoPaterno && (
-                    <p className="mt-1 text-sm text-red-600">{errors.apellidoPaterno.message}</p>
+                    <p className="text-sm text-red-600">{errors.apellidoPaterno.message}</p>
                   )}
                 </div>
 
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                    Apellido Materno *
-                  </label>
-                  <input
+                <div className="space-y-2">
+                  <Label htmlFor="apellidoMaterno">Apellido Materno *</Label>
+                  <Input
+                    id="apellidoMaterno"
                     type="text"
                     {...register('apellidoMaterno')}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all outline-none"
                     placeholder="González"
+                    className={errors.apellidoMaterno ? 'border-red-500' : ''}
                   />
                   {errors.apellidoMaterno && (
-                    <p className="mt-1 text-sm text-red-600">{errors.apellidoMaterno.message}</p>
+                    <p className="text-sm text-red-600">{errors.apellidoMaterno.message}</p>
                   )}
                 </div>
               </div>
 
               {/* Tercera fila: Grado, Fechas */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                    Grado *
-                  </label>
-                  <select
-                    {...register('grado')}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all outline-none"
-                  >
-                    {grados.map((grado) => (
-                      <option key={grado.value} value={grado.value}>
-                        {grado.label}
-                      </option>
-                    ))}
-                  </select>
+                <div className="space-y-2">
+                  <Label htmlFor="grado">Grado *</Label>
+                  <Controller
+                    control={control}
+                    name="grado"
+                    render={({ field }) => (
+                      <Select onValueChange={field.onChange} value={field.value}>
+                        <SelectTrigger className={errors.grado ? 'border-red-500' : ''}>
+                          <SelectValue placeholder="Selecciona grado" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          {grados.map((grado) => (
+                            <SelectItem key={grado.value} value={grado.value}>
+                              {grado.label}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                    )}
+                  />
                   {errors.grado && (
-                    <p className="mt-1 text-sm text-red-600">{errors.grado.message}</p>
+                    <p className="text-sm text-red-600">{errors.grado.message}</p>
                   )}
                 </div>
 
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                    Fecha de Nacimiento *
-                  </label>
-                  <input
+                <div className="space-y-2">
+                  <Label htmlFor="fechaNacimiento">Fecha de Nacimiento *</Label>
+                  <Input
+                    id="fechaNacimiento"
                     type="date"
                     {...register('fechaNacimiento')}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all outline-none"
+                    className={errors.fechaNacimiento ? 'border-red-500' : ''}
                   />
                   {errors.fechaNacimiento && (
-                    <p className="mt-1 text-sm text-red-600">{errors.fechaNacimiento.message}</p>
+                    <p className="text-sm text-red-600">{errors.fechaNacimiento.message}</p>
                   )}
                 </div>
 
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                    Fecha Último Ascenso *
-                  </label>
-                  <input
+                <div className="space-y-2">
+                  <Label htmlFor="fechaUltimoAscenso">Fecha Último Ascenso *</Label>
+                  <Input
+                    id="fechaUltimoAscenso"
                     type="date"
                     {...register('fechaUltimoAscenso')}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all outline-none"
+                    className={errors.fechaUltimoAscenso ? 'border-red-500' : ''}
                   />
                   {errors.fechaUltimoAscenso && (
-                    <p className="mt-1 text-sm text-red-600">
+                    <p className="text-sm text-red-600">
                       {errors.fechaUltimoAscenso.message}
                     </p>
                   )}
@@ -837,96 +844,88 @@ export default function Alumnos() {
 
               {/* Cuarta fila: Contacto */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                    Nombre del Contacto *
-                  </label>
-                  <input
+                <div className="space-y-2">
+                  <Label htmlFor="nombreContacto">Nombre del Contacto *</Label>
+                  <Input
+                    id="nombreContacto"
                     type="text"
                     {...register('nombreContacto')}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all outline-none"
                     placeholder="María Pérez"
+                    className={errors.nombreContacto ? 'border-red-500' : ''}
                   />
                   {errors.nombreContacto && (
-                    <p className="mt-1 text-sm text-red-600">{errors.nombreContacto.message}</p>
+                    <p className="text-sm text-red-600">{errors.nombreContacto.message}</p>
                   )}
                 </div>
 
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                    Teléfono de Contacto *
-                  </label>
-                  <input
+                <div className="space-y-2">
+                  <Label htmlFor="telefonoContacto">Teléfono de Contacto *</Label>
+                  <Input
+                    id="telefonoContacto"
                     type="tel"
                     {...register('telefonoContacto')}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all outline-none"
                     placeholder="+56 9 1234 5678"
+                    className={errors.telefonoContacto ? 'border-red-500' : ''}
                   />
                   {errors.telefonoContacto && (
-                    <p className="mt-1 text-sm text-red-600">{errors.telefonoContacto.message}</p>
+                    <p className="text-sm text-red-600">{errors.telefonoContacto.message}</p>
                   )}
                 </div>
 
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                    Email de Contacto *
-                  </label>
-                  <input
+                <div className="space-y-2">
+                  <Label htmlFor="emailContacto">Email de Contacto *</Label>
+                  <Input
+                    id="emailContacto"
                     type="email"
                     {...register('emailContacto')}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all outline-none"
                     placeholder="contacto@email.com"
+                    className={errors.emailContacto ? 'border-red-500' : ''}
                   />
                   {errors.emailContacto && (
-                    <p className="mt-1 text-sm text-red-600">{errors.emailContacto.message}</p>
+                    <p className="text-sm text-red-600">{errors.emailContacto.message}</p>
                   )}
                 </div>
               </div>
 
               {/* Dirección */}
-              <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  Dirección *
-                </label>
-                <input
+              <div className="space-y-2">
+                <Label htmlFor="direccion">Dirección *</Label>
+                <Input
+                  id="direccion"
                   type="text"
                   {...register('direccion')}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all outline-none"
                   placeholder="Calle Principal 123, Comuna, Ciudad"
+                  className={errors.direccion ? 'border-red-500' : ''}
                 />
                 {errors.direccion && (
-                  <p className="mt-1 text-sm text-red-600">{errors.direccion.message}</p>
+                  <p className="text-sm text-red-600">{errors.direccion.message}</p>
                 )}
               </div>
 
               {/* Notas */}
-              <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  Notas y Progreso
-                </label>
+              <div className="space-y-2">
+                <Label htmlFor="notas">Notas y Progreso</Label>
                 <textarea
+                  id="notas"
                   {...register('notas')}
                   rows={6}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all outline-none resize-none"
+                  className="flex w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm ring-offset-white placeholder:text-gray-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:bg-gray-950 dark:ring-offset-gray-950 dark:placeholder:text-gray-400 dark:focus-visible:ring-blue-400 resize-none"
                   placeholder="Registra notas sobre el progreso del alumno, observaciones, logros, etc..."
                 />
               </div>
 
               {/* Botones */}
               <div className="flex justify-end space-x-4 pt-4 border-t border-gray-200 dark:border-gray-700">
-                <button
+                <Button
                   type="button"
+                  variant="outline"
                   onClick={handleCloseModal}
-                  className="px-6 py-3 rounded-lg border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
                 >
                   Cancelar
-                </button>
-                <button
-                  type="submit"
-                  className="px-6 py-3 rounded-lg bg-primary-600 text-white hover:bg-primary-700 transition-colors font-semibold"
-                >
+                </Button>
+                <Button type="submit">
                   {editingAlumno ? 'Actualizar' : 'Guardar'}
-                </button>
+                </Button>
               </div>
             </form>
           </div>
@@ -934,9 +933,9 @@ export default function Alumnos() {
       )}
 
       {/* Modal de Confirmación */}
-      {showConfirmModal && alumnoToToggle && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white dark:bg-gray-800 rounded-xl max-w-md w-full p-6 shadow-xl">
+      <Dialog open={showConfirmModal} onOpenChange={setShowConfirmModal}>
+        <DialogContent>
+          <DialogHeader>
             <div className="flex items-center justify-center w-12 h-12 mx-auto mb-4 rounded-full bg-orange-100 dark:bg-orange-900">
               <svg
                 className="w-6 h-6 text-orange-600 dark:text-orange-400"
@@ -952,13 +951,11 @@ export default function Alumnos() {
                 />
               </svg>
             </div>
-            
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white text-center mb-2">
-              {alumnoToToggle.activo ? 'Deshabilitar Alumno' : 'Habilitar Alumno'}
-            </h3>
-            
-            <p className="text-sm text-gray-600 dark:text-gray-400 text-center mb-6">
-              {alumnoToToggle.activo ? (
+            <DialogTitle className="text-center">
+              {alumnoToToggle?.activo ? 'Deshabilitar Alumno' : 'Habilitar Alumno'}
+            </DialogTitle>
+            <DialogDescription className="text-center">
+              {alumnoToToggle?.activo ? (
                 <>
                   ¿Está seguro que desea deshabilitar a{' '}
                   <span className="font-semibold text-gray-900 dark:text-white">
@@ -970,34 +967,30 @@ export default function Alumnos() {
                 <>
                   ¿Está seguro que desea habilitar a{' '}
                   <span className="font-semibold text-gray-900 dark:text-white">
-                    {alumnoToToggle.nombres} {alumnoToToggle.apellidoPaterno}
+                    {alumnoToToggle?.nombres} {alumnoToToggle?.apellidoPaterno}
                   </span>
                   ?
                 </>
               )}
-            </p>
-
-            <div className="flex space-x-3">
-              <button
-                onClick={cancelToggleActivo}
-                className="flex-1 px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors font-medium"
-              >
-                Cancelar
-              </button>
-              <button
-                onClick={confirmToggleActivo}
-                className={`flex-1 px-4 py-2 rounded-lg text-white font-medium transition-colors ${
-                  alumnoToToggle.activo
-                    ? 'bg-orange-600 hover:bg-orange-700'
-                    : 'bg-green-600 hover:bg-green-700'
-                }`}
-              >
-                {alumnoToToggle.activo ? 'Deshabilitar' : 'Habilitar'}
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
+            </DialogDescription>
+          </DialogHeader>
+          <DialogFooter className="gap-2 sm:gap-0">
+            <Button
+              variant="outline"
+              onClick={cancelToggleActivo}
+            >
+              Cancelar
+            </Button>
+            <Button
+              variant={alumnoToToggle?.activo ? 'destructive' : 'default'}
+              onClick={confirmToggleActivo}
+              className={!alumnoToToggle?.activo ? 'bg-green-600 hover:bg-green-700' : ''}
+            >
+              {alumnoToToggle?.activo ? 'Deshabilitar' : 'Habilitar'}
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
